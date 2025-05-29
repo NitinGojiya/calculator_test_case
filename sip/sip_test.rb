@@ -73,21 +73,21 @@ class SipTest < Minitest::Test
   end
 
   def test_monthly_invenssip_tetment_lumpsum_more
-    skip
+    # skip
     sip = Sip.new(100_000_000_1, 1.4, 1)
     assert_raises(ArgumentError, 'Monthly investment no less than 500 or morethan 10000000') { sip.calculate_lumpsum }
   end
 
   def test_lumpsum_calculate_one_thousand
-    skip
-    sip = sip.new(1000, 12, 1)
+    # skip
+    sip = Sip.new(1000, 12, 1)
     assert_equal 1120, sip.calculate_lumpsum
   end
 
   def test_lumpsum_calculate_ten_thousand
-    skip
-    sip = sip.new(100_00, 6, 1)
-    assert_equal 112_36, sip.calculate_lumpsum
+    # skip
+    sip = Sip.new(100_00, 6, 1)
+    assert_equal 106_00, sip.calculate_lumpsum
   end
 end
 
