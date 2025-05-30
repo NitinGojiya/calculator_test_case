@@ -12,28 +12,28 @@ class CarTest < Minitest::Test
   end
 
   def test_car_rate
-     @car = Car.new(100_000, 0.5, 4)
+    @car = Car.new(100_000, 0.5, 4)
     assert_raises(ArgumentError, 'Rate range is 1 to 30') { @car.car_cal }
   end
 
   def test_car_year_four_one
-     @car = Car.new(100_000, 0.5, 41)
+    @car = Car.new(100_000, 0.5, 41)
     assert_raises(ArgumentError, 'Year range is 1 to 40') { @car.car_cal }
   end
 
   def test_car_year_zero
-    @car =  Car.new(100_000, 5, 0)
+    @car = Car.new(100_000, 5, 0)
     assert_raises(ArgumentError, 'Year range is 1 to 40') { @car.car_cal }
   end
 
   def test_car_loan_result
-    @car =  Car.new(200_000_0, 8.4, 20)
-    assert_equal 167_79, @car.car_cal
+    @car = Car.new(200_000_0, 8.4, 20)
+    assert_equal 172_30, @car.car_cal
   end
 
   def test_car_loan_result_
-      @car = Car.new(100_000_000, 8.4, 20)
-    assert_equal 861_505, @car.car_cal
+    @car = Car.new(100_000_000, 8.4, 20)
+    assert_equal 861_504, @car.car_cal
   end
 
   def test_car_loan_result_thirty_rate
