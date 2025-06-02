@@ -63,7 +63,7 @@ class SimpleIntrestTest < Minitest::Test
   end
 
   def test_total_amount_three
-    si = SimpleIntrest.new(777_77, 7.5, 7)
+    si = SimpleIntrest.new(777_77, 7.77, 7)
     assert_equal 120_080, si.si_cal_tot_amount
   end
 end
