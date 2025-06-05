@@ -13,7 +13,7 @@ class SsyTest < Minitest::Test
   end
 
   def test_rate_static_check
-    assert 8.2, Sst::RATE
+    assert 8.2, Ssy::RATE
   end
 
   def test_girl_age_limit_if_low

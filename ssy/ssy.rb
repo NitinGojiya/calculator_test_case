@@ -1,4 +1,5 @@
 class Ssy
+  RATE = 8.2
   def initialize(yearly_investment, girl_age, start_year)
     @yearly_investment = yearly_investment
     @girl_age = girl_age
@@ -14,6 +15,23 @@ class Ssy
   end
 
   def cal_maturity
+    total = 0.0
+    0.upto(14) do |i|
+      years = 21 - i
+      total += @yearly_investment * ((1 + RATE / 100.0) ** years)
+    end
+    total_investment = @yearly_investment * 15
+    interest = total - total_investment
+    maturity_year = @start_year + 21
 
+    {
+      total_in: total_investment.round,
+      interest: interest.round,
+      maturity_year: maturity_year,
+      maturity_value: total.round
+    }
   end
 end
+
+# ssy = Ssy.new(33000, 3, 2025)
+# puts  ssy.cal_maturity
