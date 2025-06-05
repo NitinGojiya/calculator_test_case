@@ -1,3 +1,4 @@
+# ssy (Sukanya Samriddhi Yojana)
 class Ssy
   RATE = 8.2
   def initialize(yearly_investment, girl_age, start_year)
@@ -15,6 +16,7 @@ class Ssy
   end
 
   def cal_maturity
+    valid_argument
     total = 0.0
     0.upto(14) do |i|
       years = 21 - i
@@ -23,7 +25,7 @@ class Ssy
     total_investment = @yearly_investment * 15
     interest = total - total_investment
     maturity_year = @start_year + 21
-
+    # create hash
     {
       total_in: total_investment.round,
       interest: interest.round,
@@ -33,5 +35,15 @@ class Ssy
   end
 end
 
-# ssy = Ssy.new(33000, 3, 2025)
-# puts  ssy.cal_maturity
+print "\n Enter Yearly Investment :-"
+yearly_investment = gets.to_i
+print "\n Enter Girl Age :-"
+girl_age = gets.to_i
+date = Time.now
+ssy = Ssy.new(yearly_investment, girl_age, date.year)
+maturity = ssy.cal_maturity
+puts '--------------------------------------------------------------------------------------'
+maturity.each do |key, value|
+  puts "#{key.to_s}:#{value.to_s}"
+end
+puts '--------------------------------------------------------------------------------------'

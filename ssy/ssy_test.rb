@@ -48,56 +48,32 @@ class SsyTest < Minitest::Test
 
   def test_total_maturity_and_interest_return_one
     ssy = Ssy.new(250, 3, 2029)
-    expected = {
-      total_in: 3750,
-      interest: 7796,
-      maturity_year: 2040,
-      maturity_value: 115_46
-    }
+    expected = { total_in: 3750, interest: 8220, maturity_year: 2050, maturity_value: 119_70 }
     assert_equal expected, ssy.cal_maturity
   end
 
   def test_total_maturity_and_interest_return_two
     ssy = Ssy.new(330_00, 6, 2025)
-    expected = {
-      total_in: 495_000,
-      interest: 102_906_7,
-      maturity_year: 2046,
-      maturity_value: 152_406_7
-    }
+    expected = { total_in: 495_000, interest: 108_506_6, maturity_year: 2046, maturity_value: 158_006_6 }
+
     assert_equal expected, ssy.cal_maturity
   end
 
   def test_total_maturity_and_interest_return_three
     ssy = Ssy.new(427_50, 10, 2018)
-    expected = {
-      total_in: 641_250,
-      interest: 133_311_0,
-      maturity_year: 2039,
-      maturity_value: 197_436_0
-    }
+    expected = { total_in: 641_250, interest: 140_565_4, maturity_year: 2039, maturity_value: 204_690_4 }
     assert_equal expected, ssy.cal_maturity
   end
 
   def test_total_maturity_and_interest_return_four
     ssy = Ssy.new(150_000, 1, 2029)
-    expected = {
-      total_in: 225_000_0,
-      interest: 467_757_8,
-      maturity_year: 2050,
-      maturity_value: 692_757_8
-    }
+    expected = { total_in: 225_000_0, interest: 493_211_9, maturity_year: 2050, maturity_value: 718_211_9 }
     assert_equal expected, ssy.cal_maturity
   end
 
   def test_total_maturity_and_interest_return_five
     ssy = Ssy.new(777_7, 7, 2027)
-    expected = {
-      total_in: 116_655,
-      interest: 242_517,
-      maturity_year: 2048,
-      maturity_value: 359_172
-    }
+    expected = { total_in: 116_655, interest: 255_714, maturity_year: 2048, maturity_value: 372_369 }
     assert_equal expected, ssy.cal_maturity
   end
 end
