@@ -54,7 +54,7 @@ class SsyTest < Minitest::Test
       maturity_year: 2040,
       maturity_value: 115_46
     }
-    assert expected, ssy.cal_maturity
+    assert_equal expected, ssy.cal_maturity
   end
 
   def test_total_maturity_and_interest_return_two
@@ -65,7 +65,7 @@ class SsyTest < Minitest::Test
       maturity_year: 2046,
       maturity_value: 152_406_7
     }
-    assert expected, ssy.cal_maturity
+    assert_equal expected, ssy.cal_maturity
   end
 
   def test_total_maturity_and_interest_return_three
@@ -76,7 +76,7 @@ class SsyTest < Minitest::Test
       maturity_year: 2039,
       maturity_value: 197_436_0
     }
-    assert expected, ssy.cal_maturity
+    assert_equal expected, ssy.cal_maturity
   end
 
   def test_total_maturity_and_interest_return_four
@@ -87,7 +87,7 @@ class SsyTest < Minitest::Test
       maturity_year: 2050,
       maturity_value: 692_757_8
     }
-    assert expected, ssy.cal_maturity
+    assert_equal expected, ssy.cal_maturity
   end
 
   def test_total_maturity_and_interest_return_five
@@ -98,6 +98,6 @@ class SsyTest < Minitest::Test
       maturity_year: 2048,
       maturity_value: 359_172
     }
-    assert expected, ssy.cal_maturity
+    assert_equal expected, ssy.cal_maturity
   end
 end
