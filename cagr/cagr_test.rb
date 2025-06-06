@@ -28,7 +28,7 @@ class CagrTest < Minitest::Test
   end
 
   def test_final_invesment_negative
-    assert_raises(ArgumentError, 'Final invesment between 1000 to 10000000') { Cagr.new(1000, -5678, 10) }
+    assert_raises(ArgumentError, 'Final invesment not negative') { Cagr.new(1000, -5678, 10) }
   end
 
   def test_final_invesment_decimal
@@ -67,8 +67,8 @@ class CagrTest < Minitest::Test
   end
 
   def test_cagr_calculate_four
-    cagr = Cagr.new(100_000_00, 100_000_00, 0.0)
-    assert_equal 3.86, cagr.cal_cagr
+    cagr = Cagr.new(100_000_00, 100_000_00, 40)
+    assert_equal 0.0, cagr.cal_cagr
   end
 
   def test_cagr_calculate_five
